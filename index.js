@@ -9,3 +9,13 @@ function deleteInvalids(array){
             }
         }return result;
     }
+
+    
+function password(obj) {  
+    if (!obj.name || !obj.birthYear || !obj.siteName || isNaN(obj.birthYear) || obj.birthYear.toString().length !== 4) {
+        return "invalid";
+    }
+    const capitalized = obj.siteName.charAt(0).toUpperCase() + obj.siteName.slice(1);
+    const result = capitalized + '#' + obj.name + '@' + obj.birthYear;
+    return result;
+}
